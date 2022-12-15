@@ -135,6 +135,7 @@ df[['min_temp', 'pressure']] = df[['min_temp', 'pressure']].astype(float)
 
 ![dtypes](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/dtypes.png)
 
+Our cleaned data was exported as a CSV file, and can be accessed [here](https://github.com/doliver231/Mission-To-Mars/blob/main/mars_information.csv).
 
 ## Further Analysis of the Web Scraped Data
 
