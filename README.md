@@ -31,6 +31,23 @@ Web scraping automates the tedious tasks of extracting online data for analysis.
 
 Through this analysis, we were able to identify HTML elements on a page, identify their `id` and `class` attributes, and use this knowledge to extract information via both automated browsing with `Splinter` and HTML parsing with `Beautiful Soup`. We were also able to scrape various types of information, including HTML tables and recurring elements, like multiple news articles on a webpage.
 
+The following code shows how we used Splinter and Beautiful Soup to begin our scraping:
+
+```py
+from splinter import Browser
+from bs4 import BeautifulSoup as soup
+from webdriver_manager.chrome import ChromeDriverManager
+
+executable_path = {'executable_path': ChromeDriverManager().install()}
+browser = Browser('chrome', **executable_path, headless=False)
+
+url = ''
+browser.visit(url)
+
+html = browser.html
+'' = soup(html, 'html.parser')
+```
+
 ### Deliverable 1 : Scrape Titles and Preview Text from Mars News
 
 Using `Splinter` and `Beautiful Soup`, we were able to scrape news article titles and its preview descriptions and store them as a list of dictionaries. Here is the full code used on Jupyter Notebook: [part_1_mars_news.ipynb](https://github.com/doliver231/Mission-To-Mars/blob/main/part_1_mars_news.ipynb)
