@@ -119,26 +119,26 @@ df[['min_temp', 'pressure']] = df[['min_temp', 'pressure']].astype(float)
 ![dtypes](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/dtypes.png)
 
 
-## Summary of Results
+## Further Analysis of the Web Scraped Data
 
-How many months exist on Mars?
-How many Martian (and not Earth) days worth of data exist in the scraped dataset?
+1. How many months exist on Mars?
+2. How many Martian (and not Earth) days worth of data exist in the scraped dataset?
 
-![Questions12]()
+![Questions12](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Question12.png)
 
-What are the coldest and the warmest months on Mars (at the location of Curiosity)?
+3. What are the coldest and the warmest months on Mars (at the location of Curiosity)?
 
-![Question3]()
+![Question3](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Question3.png)
 ![BarChart Temps](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Martian_Temperature_vs_Month.png)
-![Question3a]()
+![Question3a](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Question3a.png)
 
-Which months have the lowest and the highest atmospheric pressure on Mars? 
+4. Which months have the lowest and the highest atmospheric pressure on Mars? 
 
-![Question4]()
+![Question4](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Question4.png)
 ![BarChart Pressure](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Martian_Pressure_vs_Month.png)
 
-About how many terrestrial (Earth) days exist in a Martian year?
+5. About how many terrestrial (Earth) days exist in a Martian year?
 
-![Question5]()
+![Question5](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Question5.png)
 ![Daily Temps](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Martian_Daily_Temperatures.png)
-![Question5a]()
+![Question5a](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Question5a.png)
