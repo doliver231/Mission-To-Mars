@@ -11,7 +11,7 @@ Web scraping automates the tedious tasks of extracting online data for analysis.
 ### Data Source
 
 [Mars Temperature Data Website]( https://data-class-mars-challenge.s3.amazonaws.com/Mars/index.html), 
-[Mars NASA News Website](https://redplanetscience.com),
+[Mars NASA News Website](https://redplanetscience.com)
 
 ### Software/Libraries
 
@@ -47,7 +47,7 @@ for x in titles:
 ```
 Here is the resulting output, our list of dictionaries:
 
-![List of Dictionaries : News Articles]()
+![List of Dictionaries : News Articles](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/List_of_dictionaries_news.png)
 
 This list of dictionaries was stored in a Mongo Database with the following code:
 
@@ -58,6 +58,66 @@ News_db = mongo['mars_db']
 News_coll = News_db['mars_coll']
 News_coll.insert_many(mars_news)
 ```
+To check to see if the data was correctly stored in the MongoDB:
+
+![Mongo](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Mongo.png)
+
+### Deliverable 2 : Scrape and Analyze Mars Weather Data
+
+Here is the full code used on Jupyter Notebook: [part_2_mars_weather.ipynb](https://github.com/doliver231/Mission-To-Mars/blob/main/part_2_mars_weather.ipynb)
+
+```py
+table = temp_soup.find('table', class_='table')
+mars_data = table.find_all('td')
+
+id = []
+terrestrial_date = []
+sol = []
+ls = []
+month = []
+min_temp = []
+pressure = []
+
+for i,element in enumerate(mars_data):
+    if i % 7 == 0:
+        id.append(element.get_text())
+    elif i % 7 == 1:
+        terrestrial_date.append(element.get_text())
+    elif i % 7 == 2:
+        sol.append(element.get_text())
+    elif i % 7 == 3:
+        ls.append(element.get_text())
+    elif i % 7 == 4:
+        month.append(element.get_text())
+    elif i % 7 == 5:
+        min_temp.append(element.get_text())
+    elif i % 7 == 6:
+        pressure.append(element.get_text())
+
+dictionary = {
+    "id": id,
+    "terrestrial_date": terrestrial_date,
+    "sol": sol,
+    "ls": ls,
+    "month": month,
+    "min_temp": min_temp,
+    "pressure": pressure
+}
+
+df = pd.DataFrame(dictionary)
+```
+
+After scraping the Martian weather data, storing it in a dictionary, and converting it to a Pandas DataFrame, the data needed to be prepared for analysis, which involved having the correct data types:
+
+```py
+from datetime import datetime as dt
+df[['id', 'sol', 'ls', 'month']] = df[['id', 'sol', 'ls', 'month']].astype(int)
+df['terrestrial_date'] = pd.to_datetime(df['terrestrial_date'])
+df[['min_temp', 'pressure']] = df[['min_temp', 'pressure']].astype(float)
+```
+
+![dtypes]()
+
 
 ## Summary of Results
 
