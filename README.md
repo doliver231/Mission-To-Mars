@@ -116,25 +116,29 @@ df['terrestrial_date'] = pd.to_datetime(df['terrestrial_date'])
 df[['min_temp', 'pressure']] = df[['min_temp', 'pressure']].astype(float)
 ```
 
-![dtypes]()
+![dtypes](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/dtypes.png)
 
 
 ## Summary of Results
 
-Regardless of the year, the key differences/similarities in weather between June and December:
+How many months exist on Mars?
+How many Martian (and not Earth) days worth of data exist in the scraped dataset?
 
-* The average temperature is in the 70's for both months; temperature does not have major fluctuations throughout the year.
-* Although similar statistics, the temperatures in December are slighly below those of June, whether it is the average, minimum, and maximum.
-* The standard deviation of the average temperature for December is slightly higher than of June.
+![Questions12]()
 
-If we do an additional query (as seen in the Jupyter [challenge file](https://github.com/doliver231/surfs_up/blob/main/SurfsUp_Challenge.ipynb)) and add precipation results for both June and December, our output shows the following:
+What are the coldest and the warmest months on Mars (at the location of Curiosity)?
 
-![June Stats Prcp](https://github.com/doliver231/surfs_up/blob/main/Images/Temps_Prcp_June.png)
-![December Stats Prcp](https://github.com/doliver231/surfs_up/blob/main/Images/Temps_Prcp_December.png)
+![Question3]()
+![BarChart Temps](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Martian_Temperature_vs_Month.png)
+![Question3a]()
 
-The temperatures in Oahu is relatively the same throughout the year and the chances of continuous rainfall is low. As we can see, the average precipitation in those months showed:
+Which months have the lowest and the highest atmospheric pressure on Mars? 
 
-* June = 0.136 (14%) (better month compared to December!)
-* December = 0.216 (22%)
+![Question4]()
+![BarChart Pressure](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Martian_Pressure_vs_Month.png)
 
-Looking at the precipitation and temperature data proves that investing in Surf n' Shake is a good business venture, and that Oahu, Hawaii is an ideal location.
+About how many terrestrial (Earth) days exist in a Martian year?
+
+![Question5]()
+![Daily Temps](https://github.com/doliver231/Mission-To-Mars/blob/main/Images/Martian_Daily_Temperatures.png)
+![Question5a]()
